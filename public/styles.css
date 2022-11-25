@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Karma:wght@300&family=Philosopher&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+
+* {
+  box-sizing: border-box;
+  font-family: 'Philosopher', sans-serif;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 0.9;
+  margin: 0;
+  /* min-height: 170vh; */
+  min-width: 1226px;
+}
+
+.root {
+  min-height: 100vh;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+h2,
+h3,
+a {
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo a {
+  font-family: 'Philosopher', sans-serif;
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.45em;
+}
+
+.main-nav {
+  margin-top: 5px;
+
+}
+
+.logo a,
+.main-nav a {
+  padding: 10px 15px;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  font-family: 'Philosopher', sans-serif;
+  font-weight: 600;
+}
+
+.main-nav a {
+  color: #ffffff;
+  font-size: 1.1em;
+}
+
+.main-nav a:hover {
+  color: #e634bf;
+}
+
+
+
+.header {
+  padding-top: .5em;
+  padding-bottom: .5em;
+  border: 1px solid #a2a2a2;
+
+  background-color: #000000;
+  -webkit-box-shadow: 0px 0px 14px 0px rgb(157 1 102);
+  -moz-box-shadow: 0px 0px 13px 0px rgb(157 1 102);
+  box-shadow: 0px 0px 14px 0px rgb(157 1 102);
+
+
+}
+
+.filter h2 {
+  margin: auto;
+  width: 24%;
+  color: #000000;
+  text-align: center;
+  font-family: 'Philosopher', sans-serif;
+}
+
+.filter {
+  margin: auto;
+  position: relative;
+  left: 1%;
+  line-height: 2.1em;
+  width: 63%;
+  border: 2px solid #000000;
+  padding: 10px;
+  border-radius: 61px;
+  background-color: #d3ca8f5e;
+  border: transparent;
+}
+
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+}
+
+.tickbar {
+  display: flex;
+  margin: auto;
+}
+
+.bar {
+  padding: 0.4em;
+}
+
+.grid-head {
+  align-items: center;
+  display: flex;
+  border: 1px solid black transparent;
+  position: relative;
+  top: 3em;
+  width: 100%;
+  justify-content: space-around;
+  height: 2.4em;
+
+}
+
+.no-con {
+  height: 18px;
+  width: 50%;
+  position: relative;
+  left: 45%;
+  font-size: 19px;
+  top: 11.2em;
+  font-weight: 600;
+
+}
+
+#innerdiv #c1,
+#innerdiv #c2,
+#innerdiv #c3,
+#innerdiv #c4,
+#innerdiv #c5,
+#innerdiv #c6 {
+  background-color: #d3ca8f5e;
+}
+
+.grid-col {
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 0.5em;
+}
+
+.grid-col a {
+  color: black;
+}
+
+#c1 {
+  width: 367.2em;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+
+#c6 {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+
+#top-bar {
+  background-color: #d1b1b1;
+}
+
+#top-bar .grid-col {
+  font-weight: bold;
+
+}
+
+#innerdiv #c3 a {
+  color: #3e4578;
+}
+
+#innerdiv #c3 a:hover {
+  color: #000000;
+}
+
+.btn {
+  position: absolute;
+  top: 110%;
+  left: 47%;
+  height: 26px;
+  width: 79px;
+  background-color: #d3ca8f5e;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 2px 2px rgb(0, 0, 0);
+}
+
+
+.btn {
+  background-color: #d3ca8f5e;
+  /* border: 3px solid #000000; */
+  border-radius: 50px;
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+  color: #000000;
+  font-weight: 500;
+}
+
+.btn:hover {
+  box-shadow: 0 0 10px 0 #000000 inset, 0 0 20px 2px #311629;
+  border: 3px solid #112422;
+  color: #000000;
+}
+
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+
+
+
+@media (min-width: 769px) {
+
+  .header,
+  .main-nav {
+    display: flex;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+
+  }
+
+}
+
+/* @media (max-width: 887px) {
+  .filter-bar .tickbar {
+   flex-direction: column; 
+  }
+} */
+
+
+@media (min-width: 1025px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+}
+
+
+
+
+/* -------------------footer--------------------- */
+
+
+* {
+  font-family: Roboto;
+}
+
+section {
+  width: 100%;
+  display: inline-block;
+  height: 19vh;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+
+}
+
+.footer-distributed {
+  background-color: #000000;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 12%);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: normal 16px sans-serif;
+  padding: 32px 66px;
+  position: absolute;
+  bottom: 0;
+}
+
+.footer-distributed .footer-left p {
+  color: #e4e9bb;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Footer links */
+
+.footer-distributed p.footer-links {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0 0 10px;
+  padding: 0;
+  transition: ease .25s;
+}
+
+.footer-distributed p.footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+  transition: ease .25s;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "·";
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+.footer-distributed .footer-right {
+  float: right;
+  margin-top: -6px;
+  max-width: 180px;
+}
+
+.footer-distributed .footer-right a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: #25323a;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #e4e9bb;
+  text-align: center;
+  line-height: 35px;
+  margin-left: 3px;
+  transition: all .25s;
+}
+
+.footer-distributed .footer-right a:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+}
+
+.footer-distributed p.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-right {
+    text-align: center;
+  }
+
+  .footer-distributed .footer-right {
+    color: #f3efbf;
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .footer-distributed .footer-left p.footer-links {
+    line-height: 1.8;
+  }
+}
+
+.footer-left p {
+  font-family: 'Philosopher', sans-serif;
+}
+
+
+
+
+
+
+/* .............................. */
+html,
+body {
+  height: 100%;
+}
+
+#root {
+  min-height: 100%;
+  position: relative;
+}
+
+#body {
+  padding-bottom: 100px;
+  /* height of footer */
+}
+
+footer {
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+}

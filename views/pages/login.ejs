@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="/styles.css">
+
+    <script src="https://kit.fontawesome.com/7d57d2fbcb.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arima+Madurai&display=swap');
+
+       
+        .bio {
+            position: relative;
+            height: 209px;
+            width: 80%;
+            top: 7.2em;
+            margin: auto;
+            border: 1px solid;
+            border-radius: 58px;
+        }
+
+        .bio p {
+            text-align: center;
+            position: relative;
+            top: 37%;
+            font-size: 19px;
+            font-family: 'Arima Madurai', cursive;
+        }
+
+        html,
+        body {
+            height: 100%;
+            min-height: 100vh;
+        }
+
+        #root {
+            min-height: 100%;
+            position: relative;
+            background-color: #ebf3f5;
+        }
+
+        #body {
+            padding-bottom: 100px;
+            /* height of footer */
+        }
+
+        footer {
+            height: 100px;
+            width: 100%;
+            position: relative;
+            left: 0;
+            bottom: 0;
+
+        }
+
+        #nv2 {
+            text-decoration: underline;
+        }
+
+        .btn {
+            border-radius: 36px;
+            background: #FEE996;
+        }
+
+        form h2 {
+            font-size: 2.4em;
+            font-weight: 900;
+            margin-bottom: 40px;
+            color: black;
+            font-family: 'Philosopher', sans-serif;
+
+        }
+
+        form {
+            width: 360px;
+            margin: 0 auto;
+            padding: 30px;
+            box-shadow: 1px 2px 22px rgb(0 0 0 / 10%);
+            border-radius: 33px;
+            background: #c9d1d3;
+            position: relative;
+            top: -11.8em;
+            left: 21%;
+            box-shadow: 0px 0px 24px 0px rgb(20 14 19);
+            font-family: 'Philosopher', sans-serif;
+        }
+
+
+        input {
+            padding: 10px 12px;
+            border-radius: 15px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+            width: 100%;
+
+
+        }
+
+        label {
+            display: block;
+            margin: 20px 0 10px;
+            font-family: 'Philosopher', sans-serif;
+            font-size: 20.2px;
+
+        }
+
+        button {
+            margin-top: 30px;
+            border-radius: 36px;
+            background: #f1d875;
+            border: 0;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 0.8em;
+            display: block;
+            padding: 10px 16px;
+            letter-spacing: 2px;
+            font-family: 'Philosopher', sans-serif;
+
+        }
+
+        button:hover {
+            color: white;
+            background-color: black;
+            transition: 1.2 ease;
+
+        }
+
+        .error {
+            color: #ff0099;
+            margin: 10px 2px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .icon-cont {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            left: 5.5em;
+            top: 3.1em;
+        }
+
+        .icon-cont img {
+            width: 500px;
+            height: 500px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <header class="header">
+            <h1 class="logo"><a href="#">Contest Routes</a></h1>
+            <ul class="main-nav">
+
+                <li><a id="nv1" href="/home">Home</a></li>
+
+            </ul>
+        </header>
+            
+        <div class="icon-cont">
+            <img src="images/icon.jpg">
+        </div>
+
+        <form action="/login" id="auth">
+            <h2>Login</h2>
+            <label for="email">Email</label>
+            <input type="text" name="email" required />
+            <div class="email error"></div>
+            <label for="password">Password</label>
+            <input type="password" name="password" required />
+            <div class="password error"></div>
+            <button>login</button>
+        </form>
+
+       
+
+
+
+        <footer id="foot" class="footer-distributed">
+
+            <div class="footer-right">
+
+
+                <a href="https://www.linkedin.com/in/jayant-patel-3896321bb/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/jayantptl"><i class="fa-brands fa-github"></i></a>
+
+            </div>
+
+            <div class="footer-left">
+
+                <p>JET&copy; 2022</p>
+            </div>
+
+        </footer>
+
+    </div>
+    <script>
+       
+       const form = document.querySelector('form');
+        const emailError = document.querySelector('.email.error');
+        const passwordError = document.querySelector('.password.error');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            // reset errors
+            emailError.textContent = '';
+            passwordError.textContent = '';
+            // get values
+            const email = form.email.value;
+            const password = form.password.value;
+            try {
+                const res = await fetch('/login', {
+                    method: 'POST',
+                    body: JSON.stringify({ email, password }),
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const data = await res.json();
+                console.log(data);
+                if (data.errors) {
+                    emailError.textContent = data.errors.email;
+                    passwordError.textContent = data.errors.password;
+                }
+                if (data.user) {
+                    location.assign('/');
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        });
+      </script>
+</body>
+
+</html>
