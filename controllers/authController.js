@@ -1,5 +1,7 @@
 const User = require("../models/User");
 const jwt = require('jsonwebtoken');
+const fetch = (url) =>
+  import("node-fetch").then(({ default: fetch }) => fetch(url));
 
 // handle errors
 const handleErrors = (err) => {
