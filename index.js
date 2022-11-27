@@ -256,7 +256,12 @@ app.get('/setrem/:id', async (req, res) => {
                 let contest_date = cont_info.start;
                 let tmp = contest_date.substring(0, 11);
                 tmp = tmp + '00:00:01';
+                if(contest_date.substring(8,10)==new Date().getDate()){
+                   tmp=contest_date;
+                }
+
                 const somedate = new Date(tmp);
+
 
                 let description = `Attention! This is to remind you that ${cont_info.host} will hold ${cont_info.event} on ${cont_info.start}.
 
@@ -284,6 +289,8 @@ app.get('/setrem/:id', async (req, res) => {
                         pass: process.env.AppPass
                     }
                 });
+               
+            
 
 
 
