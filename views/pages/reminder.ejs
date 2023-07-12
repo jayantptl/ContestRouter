@@ -13,24 +13,24 @@
       <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
 
       <style>
-                 <% let ln=contests.objects.length; %>
-                  body{
-                      
-                        <% if(ln<=10) { %>
-                              min-height: 100%;
-                  <%   }else if(ln<=15) {  %>
-                            min-height: 150vh;
-                   <% } else{ %>
-                             min-height: 170vh;
-                   <%  } %>   
-                  }
-                 
+            <% let ln=contests.objects.length; %>
+            body{
+            
+                  <% if(ln<=10) { %>
+                        min-height: 100%;
+            <%   }else if(ln<=15) {  %>
+                  min-height: 150vh;
+            <% } else{ %>
+                  min-height: 170vh;
+            <%  } %>   
+            }
 
-                  #nv2{
-                       <% if(val){ %>
-                        text-decoration: underline;
-                      <% } %>
-                  }
+
+            #nv2{
+            <% if(val){ %>
+                  text-decoration: underline;
+            <% } %>
+            }
 
 
             .usd{
@@ -44,11 +44,11 @@
                   text-shadow: 0 0 7px #fff, 
                   0 0 10px #fff, 
                   0 0 21px #fff,
-                   0 0 42px #f09, 0 0 82px #f09, 0 0 92px #f09, 0 0 102px #f09, 0 0 151px #f09;
+                  0 0 42px #f09, 0 0 82px #f09, 0 0 92px #f09, 0 0 102px #f09, 0 0 151px #f09;
             }
-             
+            
             #c4 i{
-                font-size: 19px;  
+            font-size: 19px;  
             }
 
       </style>
@@ -57,187 +57,171 @@
 
 <body>
       <div id="root">
-            <header class="header">
-                  <h1 class="logo"><a href="#">Contest Routes</a></h1>
-                  <ul class="main-nav">
+      <header class="header">
+            <h1 class="logo"><a href="#">Contest Routes</a></h1>
+            <ul class="main-nav">
 
 
-                        <% if(user){     %>
-                              <li class="usd">Welcome, <%= user.email %> </li>
-                              <li><a id="nv1" href="/home">Home</a></li>
-                              <li><a id="nv2" href="/reminder">Set Reminder</a></li>
-                              <li><a id="nv4" href="/logout">Log out</a></li>
+            <% if(user){     %>
+                  <li class="usd">Welcome, <%= user.email %> </li>
+                  <li><a id="nv1" href="/home">Home</a></li>
+                  <li><a id="nv2" href="/reminder">Set Reminder</a></li>
+                  <li><a id="nv4" href="/logout">Log out</a></li>
 
-                         <% } %>
+                  <% } %>
 
-                  </ul>
-            </header>
+            </ul>
+      </header>
 
-            <div class="filter">
-                  <h2>Platform filter</h2>
-                  <div class="filter-bar">
-                        <form action="/reminder" method="POST" class="tickbar">
+<div class="filter">
+      <h2>Platform filter</h2>
+      <div class="filter-bar">
+            <form action="/reminder" method="POST" class="tickbar">
 
-                              <div class="bar"> <input class="bar-i" type="checkbox" id="CodeForces" name="CodeForces"
-                                          value=1>
-                                    <label for="CodeForces">CodeForces</label>
-                              </div>
-                              <div class="bar"> <input class="bar-i" type="checkbox" id="CodeChef" name="CodeChef"
-                                          value=2>
-                                    <label for="CodeChef">CodeChef</label>
-                              </div>
-
-
-                              <div class="bar"> <input class="bar-i" type="checkbox" id="AtCoder" name="AtCoder"
-                                          value=93>
-                                    <label for="AtCoder">AtCoder</label>
-                              </div>
-
-                              <div class="bar"> <input class="bar-i" type="checkbox" id="HackerRank" name="HackerRank"
-                                          value=63>
-                                    <label for="HackerRank">HackerRank</label>
-                              </div>
-                              <div class="bar"> <input class="bar-i" type="checkbox" id="LeetCode" name="LeetCode"
-                                          value=102>
-                                    <label for="LeetCode">LeetCode</label>
-                              </div>
-
-                              <div class="bar"> <input class="bar-i" type="checkbox" id="HackerEarth" name="HackerEarth"
-                                          value=73>
-                                    <label for="HackerEarth">HackerEarth</label>
-                              </div>
-
-                              <div class="submit-form">
-                                    <button class="btn" type="submit">Apply</button>
-                              </div>
-
-                        </form>
-                        <div></div>
-
+                  <div class="bar"> <input class="bar-i" type="checkbox" id="CodeForces" name="CodeForces"
+                              value=1>
+                        <label for="CodeForces">CodeForces</label>
+                  </div>
+                  <div class="bar"> <input class="bar-i" type="checkbox" id="CodeChef" name="CodeChef"
+                              value=2>
+                        <label for="CodeChef">CodeChef</label>
                   </div>
 
-            </div>
 
-            <div class="grid-head" id="top-bar">
-                  <div id="c1" class="grid-col">Event</div>
-                  <div id="c2" class="grid-col">Platform</div>
-                  <div id="c3" class="grid-col">Url</div>
-                  <div id="c4" class="grid-col">Set Reminder</div>
-                  <div id="c6" class="grid-col">Start Time</div>
-             
-            </div>
+                  <div class="bar"> <input class="bar-i" type="checkbox" id="AtCoder" name="AtCoder"
+                              value=93>
+                        <label for="AtCoder">AtCoder</label>
+                  </div>
 
+                  <div class="bar"> <input class="bar-i" type="checkbox" id="HackerRank" name="HackerRank"
+                              value=63>
+                        <label for="HackerRank">HackerRank</label>
+                  </div>
+                  <div class="bar"> <input class="bar-i" type="checkbox" id="LeetCode" name="LeetCode"
+                              value=102>
+                        <label for="LeetCode">LeetCode</label>
+                  </div>
 
-            <% console.log(ln); %>
-            <% rec_ln=records.length %>
+                  <div class="bar"> <input class="bar-i" type="checkbox" id="HackerEarth" name="HackerEarth"
+                              value=73>
+                        <label for="HackerEarth">HackerEarth</label>
+                  </div>
 
+                  <div class="submit-form">
+                        <button class="btn" type="submit">Apply</button>
+                  </div>
 
-                  <% if(contests.objects.length>0){ %>
-                        <% contests.objects.forEach(contest=> { %>
-                              <% let Name=contest.event; %>
-                                    <% let Platform=contest.host.split('.')[0]; %>
-                                          <% Platform=Platform[0].toUpperCase() + Platform.substring(1); %>
-
-                                                <% let Url=contest.href; %>
-                  
-                                                            <% let StartTime=contest.start; %>
-                                                            <% let id=contest.id; %>     
-                                                            
-                                                            <%   let cont_marked = 0 %>
-                                                            <%     for (let it = 0; it < rec_ln; it++) {      %>
-                                                            <%              if(records[it]==id) cont_marked=1;        %>
-                                                            <%     };   %>
-                                                          
-
-                                                            
-
-                                                                        <% if(Platform=="My" ) Platform='Newton School'
-                                                                              ; %>
-
-                                                                              <div class="grid-head" id="innerdiv">
-                                                                                    <div id="c1" class="grid-col">
-                                                                                          <%= Name %>
-                                                                                    </div>
-                                                                                    <div id="c2" class="grid-col">
-                                                                                          <%= Platform %>
-                                                                                    </div>
-                                                                                    <div id="c3" class="grid-col">
-                                                                                          <a href="<%=Url%> "
-                                                                                                class="host-link" target="_blank" >click
-                                                                                                here</a>
-                                                                                    </div>
-                                                                                    <div id="c4" class="grid-col">
-                                                                                  
-                                                                                 <%   if(cont_marked){    %>
-                                                                                          <i class="fa-sharp fa-solid fa-circle-check"></i>
-                                                                                 <%   }else{              %> 
-                                                                                          <a href="<%= '/setrem/' + id %>">
-                                                                                              <i class="fa-solid fa-bell"></i> 
-                                                                                          </a>
-                                                                                 <%   }    %>
-                                                                                    
-
-
-                                                                              
-                                                                                    </div>
-                                                                                    <div id="c6" class="grid-col">
-                                                                                          <%= StartTime %>
-                                                                                    </div>
-                                                                                   
-                                                                              </div>
-
-                                                                              <% }) %>
-
-                                                                                    <% } else { %>
-                                                                                          <div class="no-con"> NO
-                                                                                                CONTEST AVAILABLE
-                                                                                          </div>
-
-                                                                                          <% } %>
-
-
-
-
-
-                                                                                                <!-- ...............................footer..................... -->
-
-                        
-            
-                   
-          
-      
-
-
-                                                                                                <footer id="foot"
-                                                                                                      class="footer-distributed">
-
-                                                                                                      <div
-                                                                                                            class="footer-right">
-
-
-                                                                                                            <a
-                                                                                                                  href="https://www.linkedin.com/in/jayant-patel-3896321bb/"><i
-                                                                                                                        class="fa-brands fa-linkedin"></i></a>
-                                                                                                            <a
-                                                                                                                  href="https://github.com/jayantptl"><i
-                                                                                                                        class="fa-brands fa-github"></i></a>
-
-                                                                                                      </div>
-
-                                                                                                      <div
-                                                                                                            class="footer-left">
-
-                                                                                                            <p>JET&copy;
-                                                                                                                  2022
-                                                                                                            </p>
-                                                                                                      </div>
-
-                                                                                                </footer>
+            </form>
+            <div></div>
 
       </div>
 
+</div>
+
+<div class="grid-head" id="top-bar">
+      <div id="c1" class="grid-col">Event</div>
+      <div id="c2" class="grid-col">Platform</div>
+      <div id="c3" class="grid-col">Url</div>
+      <div id="c4" class="grid-col">Set Reminder</div>
+      <div id="c6" class="grid-col">Start Time</div>
+      
+</div>
 
 
+<!-- render rows dynamically -->
+
+<% if(contests.objects.length>0){ %>
+<%   contests.objects.forEach(contest=> { %>
+<%       let Name=contest.event; %>
+<%       let Platform=contest.host.split('.')[0]; %>
+<%       Platform=Platform[0].toUpperCase() + Platform.substring(1); %>
+
+<%       let Url=contest.href; %>
+
+<%       let StartTime=contest.start; %>
+<%       let id=contest.id; %>     
+
+<!-- check if the contest is already marked -->
+<%       let cont_marked = (records[id]!=undefined) %>
+
+
+
+
+            <% if(Platform=="My") Platform='Newton School'  ; %>
+
+            <div class="grid-head" id="innerdiv">
+            <div id="c1" class="grid-col">
+            <%= Name %>
+            </div>
+
+            <div id="c2" class="grid-col">
+            <%= Platform %>
+            </div>
+
+            <div id="c3" class="grid-col">
+            <a href="<%=Url%> "
+            class="host-link" target="_blank" >click
+            here</a>
+            </div>
+
+            <div id="c4" class="grid-col">
+
+            <%   if(cont_marked){    %>
+            <i class="fa-sharp fa-solid fa-circle-check"></i>
+            <%   }else{              %> 
+            <a href="/setrem/<%=id%>" >
+            <i class="fa-solid fa-bell"></i> 
+            </a>
+            <%   }    %>
+
+             </div>
+
+            <div id="c6" class="grid-col">
+            <%= StartTime %>
+            </div>
+
+            </div>
+
+            <% }) %>
+
+            <% } else { %>
+            <div class="no-con"> NO
+            CONTEST AVAILABLE
+            </div>
+
+<% } %>
+
+
+
+
+
+<!-- ...............................footer..................... -->
+
+
+
+<footer id="foot"
+class="footer-distributed">
+
+<div
+class="footer-right">
+
+<a href="https://www.linkedin.com/in/jayant-patel-3896321bb/"><i
+            class="fa-brands fa-linkedin"></i></a>
+<a href="https://github.com/jayantptl"><i
+            class="fa-brands fa-github"></i></a>
+</div>
+
+<div
+      class="footer-left">
+
+      <p>JET&copy;
+            2022
+      </p>
+</div>
+
+</footer>
+
+</div>
 
 </body>
 
